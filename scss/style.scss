@@ -1,3 +1,7 @@
+@import "utilities";
+@import "btnConfig";
+@import "config";
+
 
 * {
   box-sizing: border-box;
@@ -28,6 +32,53 @@ a {
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
+  @include set-bg($primary-color);
+
+  height: 80vh;
+
+  nav{
+    li{
+      // color: $primary-color;
+    }
+    // Text color picker utility in utilities.scss
+    a{
+      color: text-color-picker($primary-color)
+    }
+    a:hover{
+      color: $secondary-color
+    }
+  }
+
+  ul{
+    // To get rid of the bullepoints.
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    // color:$secondary-color
+  }
+
+  a{
+    // color:$secondary-color
+  }
+  h1{
+    font-size: 40px;
+  }
+  &-content{
+    height:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    img{
+      width: 50%;
+      height: 100%;
+    }
+
+    p{
+      height: 100%;
+    }
+  }
+
 }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
